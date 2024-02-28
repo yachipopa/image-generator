@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #randomImage {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Image</h1>
+    <img id="randomImage" src="" alt="Random Image">
+    <button onclick="reloadImage()">Reload</button>
+
+    <script>
+        function reloadImage() {
+            const randomWidth = Math.floor(Math.random() * 800) + 200; // Random width from 200 to 1000
+            const randomHeight = Math.floor(Math.random() * 600) + 200; // Random height from 200 to 800
+            const imageUrl = `https://picsum.photos/${randomWidth}/${randomHeight}`;
+            document.getElementById('randomImage').src = imageUrl;
+        }
+
+        // Load a random image initially
+        reloadImage();
+    </script>
+</body>
+</html>
